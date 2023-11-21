@@ -1,0 +1,9 @@
+Project Proposal: Ardu Step Tracker
+Goal
+The goal of this project is to utilize real-time sensor streams from an Arduino micro controller, specifically data from a gyroscope and accelerometer, to implement a health-related application. This application will focus on step tracking and activity classification, leveraging signal processing and machine learning techniques.
+
+Purpose of Proposal
+The idea is to create a system that can accurately track an individual's steps and classify their physical activities in real-time. The Arduino microcontroller will be used to collect data from the gyroscope and accelerometer, which will then be processed and analyzed using signal processing techniques to extract meaningful features. These features will then be fed into a machine learning model for step counting and activity classification. This project aims to provide a low-cost, efficient, and accurate solution for step tracking and activity recognition, which can be beneficial for health monitoring and fitness applications.
+
+Required Elements
+This project will incorporate several analytic methods learned in class. Signal processing techniques will be used to process the raw sensor data and extract useful features. Machine learning algorithms will be used to classify the type of physical activity based on the processed data. Both these components are essential for the successful implementation of this project.
