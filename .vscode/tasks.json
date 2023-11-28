@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "tinygo: flash xiao-rp2040",
+            "command": "tinygo flash -target=xiao-rp2040 ${file}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "tinygo: monitor",
+            "command": "tinygo monitor",
+            "group": "test"
+        }
+    ]
+}

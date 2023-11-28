@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "TinyGo: Flash and Monitor",
+            "type": "node",
+            "request": "launch",
+            "preLaunchTask": "tinygo: flash xiao-rp2040",
+            "postDebugTask": "tinygo: monitor"
+        }
+    ]
+}
