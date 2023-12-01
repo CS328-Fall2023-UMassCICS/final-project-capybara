@@ -1,0 +1,797 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\leon3\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\leon3\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\leonardo"
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\step-tracker.ino.cpp",
+    "Include": "Adafruit_Sensor.h",
+    "Includepath": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\Adafruit_Unified_Sensor"
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\step-tracker.ino.cpp",
+    "Include": "Smoothed.h",
+    "Includepath": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\Smoothed\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\step-tracker.ino.cpp",
+    "Include": "Wire.h",
+    "Includepath": "C:\\Users\\leon3\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\step-tracker.ino.cpp",
+    "Include": "fp64lib.h",
+    "Includepath": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib"
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\step-tracker.ino.cpp",
+    "Include": "Adafruit_BusIO_Register.h",
+    "Includepath": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\Adafruit_BusIO"
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\step-tracker.ino.cpp",
+    "Include": "SPI.h",
+    "Includepath": "C:\\Users\\leon3\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\step-tracker.ino.cpp",
+    "Include": "ssd1306.h",
+    "Includepath": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\step-tracker.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\Adafruit_MPU6050.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\Smooth.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker\\build\\sketch\\process.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\Adafruit_Unified_Sensor\\Adafruit_Sensor.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\Smoothed\\src\\Smoothed.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src\\Wire.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src\\utility\\twi.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_10pown.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_abs.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_acosh.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_addsf3x.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_asinx.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_atan2.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_atanh.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_atanx.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_cbrt.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_ceil.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_classify.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_cmp.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_cmpA.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_cmp_1.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_cmpsd2.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_copysign.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_cosh.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_cotan.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_debug.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_disd.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_divsf3x.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_ds.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_exp10.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_exp2.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_expx.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_fdim.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_fixxdfsi.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_floor.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_fma.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_fmax.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_fmod.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_fmodx.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_frexp.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_fsplit3.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_ftoa1.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_gesd2.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_getexp10.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_hypot.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_ilogb.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_inf.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_inverse.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_isBzero.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_isfinite.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_isinf.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_isnan.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_ldb_1.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_ldb_log2.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_ldb_pi2.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_ldexp.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_log10.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_log2.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_logx.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_lrint.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_lround.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_lshift64.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_modf.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_movAB.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_movAC.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_movBA.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_movBC.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_movCA.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_mul64AB.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_mulsd3x.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_nan.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_negdf2.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_norm2.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_pi2.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_pow.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_powserx.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_powsoddx.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_pretA.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_pscA.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_pscB.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_round.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_scalbln.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_sd.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_shift.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_sidf.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_signbit.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_sinx.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_sqrt.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_square.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_sssd.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_stackA.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_stackB.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_stackC.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_strtod.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_swapAB.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_tanh.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_tanx.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_tostring.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_trunc.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\fp64lib\\fp64_zero.S",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\Adafruit_BusIO\\Adafruit_BusIO_Register.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\Adafruit_BusIO\\Adafruit_I2CDevice.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\Adafruit_BusIO\\Adafruit_SPIDevice.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src\\SPI.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\i2c\\ssd1306_i2c.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\i2c\\ssd1306_i2c_embedded.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\i2c\\ssd1306_i2c_twi.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\spi\\ssd1306_spi.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\spi\\ssd1306_spi_avr.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\spi\\ssd1306_spi_usi.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\ssd1306_interface.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\uart\\ssd1306_uart_builtin.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\vga\\atmega328p\\vga128x64.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\vga\\atmega328p\\vga96x40.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\vga\\esp32\\CompositeOutput.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\vga\\esp32\\vga128x64.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\intf\\vga\\vga.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\composite_video.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\lcd_common.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\lcd_il9163.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\lcd_ili9341.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\lcd_pcd8544.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\oled_sh1106.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\oled_ssd1306.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\oled_ssd1325.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\oled_ssd1327.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\oled_ssd1331.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\oled_ssd1351.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\oled_template.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\lcd\\vga_monitor.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\nano_engine\\canvas.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\nano_engine\\core.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\nano_gfx.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\sprite_pool.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_16bit.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_1bit.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_8bit.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_console.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_fonts.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_generic.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_hal\\arduino\\platform.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_hal\\avr\\platform.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_hal\\esp\\platform.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_hal\\linux\\platform.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_hal\\mingw\\platform.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_hal\\stm32\\platform.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_hal\\template\\platform.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_menu.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\leon3\\Documents\\Arduino\\libraries\\ssd1306\\src\\ssd1306_uart.c",
+    "Include": "",
+    "Includepath": null
+  }
+]

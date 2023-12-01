@@ -1,5 +1,6 @@
 {
-    "sketch": "arduino-sketch\\arduino-sketch.ino",
+    "sketch": "step-tracker\\step-tracker.ino",
     "board": "arduino:avr:leonardo",
+    "output": "step-tracker\\build",
     "port": "COM7"
 }

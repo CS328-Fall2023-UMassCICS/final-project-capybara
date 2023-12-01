@@ -1,0 +1,11 @@
+{
+  "additionalFiles": "..\\..,..\\..,..\\..,..\\..,..\\..",
+  "builtInToolsFolders": "",
+  "compiler.optimization_flags": "",
+  "customBuildProperties": "",
+  "fqbn": "arduino:avr:leonardo",
+  "hardwareFolders": "C:\\Users\\leon3\\AppData\\Local\\Arduino15\\packages",
+  "otherLibrariesFolders": "C:\\Users\\leon3\\Documents\\Arduino\\libraries",
+  "runtime.ide.version": "10607",
+  "sketchLocation": "C:\\Users\\leon3\\Desktop\\CS328\\final-project-capybara\\step-tracker"
+}
