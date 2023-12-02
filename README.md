@@ -8,21 +8,27 @@
 - There may not be a lot of practical application of this project because there are way better step detection algorithms out there, including phones. 
 - This project was done as a learning experience and for fun, and it's also always cool to make hardware stuff. 
 # Technical knowledge
-- 
-# Code implementation
-- 
+- We applied the in-class knowledge of step detection by calculating magnitu 
+- Since it's almost impossible to run scipy and other libraries, we needed a different algorithm for smoothing and detection.
+- We implemented an simplified version of the Z-score smoothing algorithm referenced below.
+- By using a z-score peak detection, we can detect steps in real time.
+
+# Implementation
+- We used an accelerometer similar to a phone to detect leg movements as well as forward acceleration.
+- Using a moving average array to do smoothing. A z-score peak detection will allow for peak detection based on previous values instead of hard coding.
 
 # Result
 - We are able to implement a variation of the z-score smoothing algrithm to combile data smoothing and peak detection, filtering is harder to implement
 - The device is functional and counting steps. 
   
 # Learning outcome
-- 
+- We designed our own 3d printed case
+- We also had a lot of challenges dealing with data types during the implementation.
 
 # Future improvements
  - Dynamically adjust z-score threashold for variation in steps. 
  - Improve the smoothing and filtering algorithm to better process accelerometer data.
- - ???
+ - Improve runtime complexity and space complexity. 
 
 # References 
 - https://stackoverflow.com/questions/22583391/peak-signal-detection-in-realtime-timeseries-data/
