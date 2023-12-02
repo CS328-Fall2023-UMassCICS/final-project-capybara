@@ -3,7 +3,6 @@
 #include <Arduino.h>
 #include <Smoothed.h>
 #include <Wire.h>
-#include <fp64lib.h>
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -13,11 +12,10 @@
 
 #define PRINT_BUFFER_LEN 96
 #define PRINT_INTERVAL 500
+
+#define MAG_ARRAY_LEN 500
+
 #define RST_BUTTON 9
-
-#define MAG_ARRAY_LEN 600
-
-typedef float64_t float64;
 
 char printBuffer[PRINT_BUFFER_LEN] = "";
 
@@ -29,109 +27,51 @@ typedef struct {
 
 mag_array_t magArray;
 
+const unsigned char DEBUG = 0;
 unsigned int peaks = 0;
 unsigned long prevPrint = 0;
 unsigned long lastPeak = 0;
+
 // calculate the mean of the current values in the mag array
-float mean() {
-  // Serial.println("mean");
-  float sum = 0;
-  for (unsigned int i = 0; i < magArray.size; i++) {
-    sum = sum + magArray.arr[i];
-  }
-  float avg = sum / magArray.size;
-  Serial.print(">avg:");
-  Serial.println(avg);
-  Serial.print(">sum:");
-  Serial.println(sum);
-  Serial.print(">size:");
-  Serial.println(magArray.size);
-
-  return avg;
-}
-
+// 8 bytes
 unsigned int mean_int() {
   // Serial.println("mean");
-  unsigned long sum = 0;
-  for (unsigned int i = 0; i < magArray.size; i++) {
+  unsigned long sum = 0;                              // 4 bytes
+  
+  for (unsigned int i = 0; i < magArray.size; i++) {  // 2 bytes
     sum = sum + magArray.arr[i];
   }
-  unsigned int avg = sum / magArray.size;
-  Serial.print(">avg:");
-  Serial.println(avg);
-  Serial.print(">sum:");
-  Serial.println(sum);
-  Serial.print(">size:");
-  Serial.println(magArray.size);
+  
+  unsigned int avg = sum / magArray.size;  // 2 bytes
+  if (DEBUG) {
+    Serial.print(">avg:");
+    Serial.println(avg);
+    Serial.print(">sum:");
+    Serial.println(sum);
+    Serial.print(">size:");
+    Serial.println(magArray.size);
+  }
 
   return avg;
 }
 
-float median() {
-  // Serial.println("median");
-  float median = 0;
-  if (magArray.size % 2 == 0) {
-    median = (magArray.arr[magArray.size / 2 - 1] +
-              magArray.arr[magArray.size / 2]) /
-             2;
-  } else {
-    median = magArray.arr[magArray.size / 2];
-  }
-  Serial.print(">median:");
-  Serial.println(median);
-  return median;
-}
-
-// calculate the standard deviation of the current values in the mag array
-float stddev(float mu) {
-  // Serial.println("stddev");
-  if (mu == -1) {
-    mu = mean();
-  }
-
-  float sigma = 0;
-  for (unsigned int i = 0; i < magArray.size; i++) {
-    sigma = sigma + pow((magArray.arr[i] - mu), 2);
-  }
-  sigma = sigma / magArray.size;
-  sigma = sqrt(sigma);
-  Serial.print(">sigma:");
-  Serial.println(sigma);
-  return sigma;
-}
-
-unsigned int stddev_int(unsigned int mu) {
-  // Serial.println("stddev");
-  if (mu == -1) {
-    mu = mean_int();
-  }
-
-  unsigned int sigma = 0;
-  for (unsigned int i = 0; i < magArray.size; i++) {
-    sigma = sigma + pow((magArray.arr[i] - mu), 2);
-  }
-  sigma = sigma / magArray.size;
-  sigma = sqrt(sigma);
-  Serial.print(">sigma:");
-  Serial.println(sigma);
-  return sigma;
-}
-
-float zscore(float v) {
+float zscore(unsigned int v) {
   // Serial.println("zscore");
-  //float mu = mean();
-  //float sigma = stddev(mu);
+  // float mu = mean();
+  // float sigma = stddev(mu);
   unsigned int mu = mean_int();
-  //unsigned int sigma = stddev_int(mu);
-  float zscore = (v - mu) / 1000;
-  Serial.print(">zscore:");
-  Serial.println(zscore);
+  // mean
+  float zscore = (int)(v - mu) / 1000.0F;  // 1000.0 as float standard deviation
+  if (DEBUG) {
+    Serial.print(">zscore:");
+    Serial.println(zscore);
+  }
   return zscore;
 }
 
-unsigned char isPeak(float v) {
+unsigned char isPeak(unsigned int v) {
   // Serial.println("isPeak");
-  if (millis() - lastPeak < 150) {
+  if (millis() - lastPeak < 150) { // filter out peaks that are too close
     return 0;
   }
   float z = zscore(v);
@@ -141,7 +81,7 @@ unsigned char isPeak(float v) {
   }
 }
 
-void addMag(float mag) {
+void addMag(unsigned int mag) {
   // Serial.println("addMag");
   if (1 == isPeak(mag)) {
     peaks++;
@@ -162,13 +102,9 @@ void printOLED() {
   char buf[16];
   sprintf(buf, ">Steps: %u", peaks);
   ssd1306_print(buf);
-  Serial.println(buf);
-}
 
-void print() {
-  char fbuf[32];
-  // Serial.println(printBuffer);
-  printOLED();
+  if (DEBUG)
+    Serial.println(buf);
 }
 
 void setup(void) {
@@ -193,7 +129,18 @@ void setup(void) {
   ssd1306_clearScreen();
   ssd1306_setFixedFont(ssd1306xled_font6x8);
   pinMode(RST_BUTTON, INPUT_PULLUP);
-  memset(&magArray, 0, sizeof(magArray));
+}
+
+/*
+- Fast sqrt approximation
+*/
+float fastsqrt(float val) {
+  long tmp = *(long*)&val;
+  tmp -= 127L << 23; /* Remove IEEE bias from exponent (-2^23) */
+  /* tmp is now an appoximation to logbase2(val) */
+  tmp = tmp >> 1;    /* divide by 2 */
+  tmp += 127L << 23; /* restore the IEEE bias from the exponent (+2^23) */
+  return *(float*)&tmp;
 }
 
 void loop() {
@@ -204,19 +151,20 @@ void loop() {
   accel_t accel_raw;
 
   mpu.getAccelEventRaw(&accel_raw);
-  int16_t x = accel_raw.x;
-  int16_t y = accel_raw.y;
-  int16_t z = accel_raw.z;
-  float64 mag =
-      fp64_sqrt(fp64_add(fp64_square(fp64_int16_to_float64(x)),
-                         fp64_add(fp64_square(fp64_int16_to_float64(y)),
-                                  fp64_square(fp64_int16_to_float64(z)))));
-  // smoothedMag.add(fp64_ds(mag));
-  // float smmag = smoothedMag.get();
-  float smmag = fp64_ds(mag);
-  Serial.print(">mag:");
-  Serial.println(smmag);
-  addMag(smmag);
+  float x = accel_raw.x * 1.0;
+  float y = accel_raw.y * 1.0;
+  float z = accel_raw.z * 1.0;
+
+  unsigned long prev = micros();
+  // unsigned int mag =(unsigned int)sqrt(sq(x) + sq(y) + sq(z));
+  unsigned int mag = (unsigned int)fastsqrt(sq(x) + sq(y) + sq(z));
+  if (DEBUG) {
+    Serial.print(">mag:");
+    Serial.println(mag);
+    Serial.print(">time:");
+    Serial.println(now - prev);
+  }
+  addMag(mag);
   if (digitalRead(RST_BUTTON) == LOW) {
     peaks = 0;
     ssd1306_clearScreen();
@@ -225,7 +173,7 @@ void loop() {
 
   if (millis() - prevPrint >= PRINT_INTERVAL) {
     prevPrint = millis();
-    print();
+    printOLED();
   }
   // delay(33);
 }
