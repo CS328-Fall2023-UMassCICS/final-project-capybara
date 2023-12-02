@@ -12,10 +12,10 @@
 #include "ssd1306.h"
 
 #define PRINT_BUFFER_LEN 96
-#define PRINT_INTERVAL 200
+#define PRINT_INTERVAL 500
 #define RST_BUTTON 9
 
-#define MAG_ARRAY_LEN 200
+#define MAG_ARRAY_LEN 600
 
 typedef float64_t float64;
 
@@ -23,7 +23,7 @@ char printBuffer[PRINT_BUFFER_LEN] = "";
 
 Adafruit_MPU6050 mpu;
 typedef struct {
-  float arr[MAG_ARRAY_LEN] = {0};
+  unsigned int arr[MAG_ARRAY_LEN] = {0};
   unsigned int size;
 } mag_array_t;
 
@@ -50,6 +50,38 @@ float mean() {
   return avg;
 }
 
+unsigned int mean_int() {
+  // Serial.println("mean");
+  unsigned long sum = 0;
+  for (unsigned int i = 0; i < magArray.size; i++) {
+    sum = sum + magArray.arr[i];
+  }
+  unsigned int avg = sum / magArray.size;
+  Serial.print(">avg:");
+  Serial.println(avg);
+  Serial.print(">sum:");
+  Serial.println(sum);
+  Serial.print(">size:");
+  Serial.println(magArray.size);
+
+  return avg;
+}
+
+float median() {
+  // Serial.println("median");
+  float median = 0;
+  if (magArray.size % 2 == 0) {
+    median = (magArray.arr[magArray.size / 2 - 1] +
+              magArray.arr[magArray.size / 2]) /
+             2;
+  } else {
+    median = magArray.arr[magArray.size / 2];
+  }
+  Serial.print(">median:");
+  Serial.println(median);
+  return median;
+}
+
 // calculate the standard deviation of the current values in the mag array
 float stddev(float mu) {
   // Serial.println("stddev");
@@ -68,18 +100,30 @@ float stddev(float mu) {
   return sigma;
 }
 
-float stddev_mu() {
-  // Serial.println("stddev_mu");
-  float mu = mean();
-  float sigma = stddev(mu);
+unsigned int stddev_int(unsigned int mu) {
+  // Serial.println("stddev");
+  if (mu == -1) {
+    mu = mean_int();
+  }
+
+  unsigned int sigma = 0;
+  for (unsigned int i = 0; i < magArray.size; i++) {
+    sigma = sigma + pow((magArray.arr[i] - mu), 2);
+  }
+  sigma = sigma / magArray.size;
+  sigma = sqrt(sigma);
+  Serial.print(">sigma:");
+  Serial.println(sigma);
   return sigma;
 }
 
 float zscore(float v) {
   // Serial.println("zscore");
-  float mu = mean();
-   float sigma = stddev(mu);
-  float zscore = (v - mu) / sigma;
+  //float mu = mean();
+  //float sigma = stddev(mu);
+  unsigned int mu = mean_int();
+  //unsigned int sigma = stddev_int(mu);
+  float zscore = (v - mu) / 1000;
   Serial.print(">zscore:");
   Serial.println(zscore);
   return zscore;
@@ -91,7 +135,7 @@ unsigned char isPeak(float v) {
     return 0;
   }
   float z = zscore(v);
-  if (z > 4) {
+  if (z > 2.5) {
     lastPeak = millis();
     return 1;
   }
@@ -99,6 +143,9 @@ unsigned char isPeak(float v) {
 
 void addMag(float mag) {
   // Serial.println("addMag");
+  if (1 == isPeak(mag)) {
+    peaks++;
+  }
   if (magArray.size < MAG_ARRAY_LEN) {
     magArray.arr[magArray.size] = mag;
     magArray.size++;
@@ -107,9 +154,6 @@ void addMag(float mag) {
       magArray.arr[i] = magArray.arr[i + 1];
     }
     magArray.arr[MAG_ARRAY_LEN - 1] = mag;
-  }
-  if (1 == isPeak(mag)) {
-    peaks++;
   }
 }
 
@@ -129,9 +173,6 @@ void print() {
 
 void setup(void) {
   Serial.begin(115200);
-  while (!Serial) {
-    delay(10);  // will pause Zero, Leonardo, etc until serial console opens
-  }
 
   // Try to initialize!
   if (!mpu.begin()) {
