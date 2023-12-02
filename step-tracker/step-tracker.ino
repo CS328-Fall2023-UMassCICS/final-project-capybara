@@ -15,7 +15,8 @@
 
 typedef struct {
   unsigned int arr[MAG_ARRAY_LEN] = {0};
-  unsigned int size;
+  unsigned int size = 0;
+  unsigned int insertIndex = 0;
 } mag_array_t;
 
 mag_array_t magArray;
@@ -76,7 +77,7 @@ unsigned char isPeak(unsigned int v) {
     return 0;
   }
   float z = zscore(v);
-  if (z > 2.5) {  // 2.5 is the threshold for a peak zscore
+  if (z > 2.5F) {  // 2.5 is the threshold for a peak zscore
     lastPeak = millis();
     return 1;
   }
@@ -86,17 +87,17 @@ void addMag(unsigned int mag) {
 #if DEBUG == 1
   Serial.println("addMag");
 #endif
-  if (isPeak(mag))
+  if (1u == isPeak(mag))
     peaks++;
 
   if (magArray.size < MAG_ARRAY_LEN) {
     magArray.arr[magArray.size] = mag;
     magArray.size++;
   } else {
-    for (unsigned int i = 0; i < MAG_ARRAY_LEN - 1; i++) {
-      magArray.arr[i] = magArray.arr[i + 1];
+    magArray.arr[magArray.insertIndex++] = mag;  // wrap
+    if (magArray.insertIndex >= MAG_ARRAY_LEN) {
+      magArray.insertIndex = 0;
     }
-    magArray.arr[MAG_ARRAY_LEN - 1] = mag;
   }
 }
 
@@ -135,7 +136,7 @@ void setup(void) {
   ssd1306_128x32_i2c_init();
   ssd1306_clearScreen();
   ssd1306_setFixedFont(ssd1306xled_font6x8);
-  
+
   pinMode(RST_BUTTON, INPUT_PULLUP);
 }
 
