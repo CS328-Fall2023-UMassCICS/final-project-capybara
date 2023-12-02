@@ -153,9 +153,9 @@ typedef enum {
 } mpu6050_cycle_rate_t;
 
 typedef struct {
-  int16_t x;
-  int16_t y;
-  int16_t z;
+  int16_t x; // raw 16-bit signed value for x
+  int16_t y; // raw 16-bit signed value for y
+  int16_t z; // raw 16-bit signed value for z
 } accel_t;
 
 class Adafruit_MPU6050;
