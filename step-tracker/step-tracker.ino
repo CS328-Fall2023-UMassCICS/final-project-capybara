@@ -77,7 +77,7 @@ unsigned char isPeak(unsigned int v) {
     return 0;
   }
   float z = zscore(v);
-  if (z > 2.5F) {  // 2.5 is the threshold for a peak zscore
+  if (z > 2.2F) {  // 2.5 is the threshold for a peak zscore
     lastPeak = millis();
     return 1;
   }
@@ -104,7 +104,12 @@ void addMag(unsigned int mag) {
 void printOLED() {
   ssd1306_setCursor(0, 0);
   char buf[16];
+#if DEBUG == 1
+
   sprintf(buf, ">Steps: %u", peaks);
+#else
+  sprintf(buf, "Steps: %u", peaks);
+#endif
   ssd1306_print(buf);
 
 #if DEBUG == 1
@@ -156,9 +161,9 @@ void loop() {
   accel_t accel_raw;
 
   mpu.getAccelEventRaw(&accel_raw);  // get raw data from sensor
-  float x = accel_raw.x * 1.0;       // convert to float
-  float y = accel_raw.y * 1.0;
-  float z = accel_raw.z * 1.0;
+  float x = accel_raw.x * 1.0F;       // convert to float
+  float y = accel_raw.y * 1.0F;
+  float z = accel_raw.z * 1.0F;
 
   unsigned int mag = (unsigned int)fastsqrt(sq(x) + sq(y) + sq(z));
 // fast squareroot approximation, calculate magnitude
