@@ -73,11 +73,11 @@ unsigned char isPeak(unsigned int v) {
 #if DEBUG == 1
   Serial.println("isPeak");
 #endif
-  if (millis() - lastPeak < 150) {  // filter out peaks that are too close
+  if (millis() - lastPeak < 200) {  // filter out peaks that are too close
     return 0;
   }
   float z = zscore(v);
-  if (z > 2.2F) {  // 2.5 is the threshold for a peak zscore
+  if (z > 2.45F) {  // 2.45 is the threshold for a peak zscore
     lastPeak = millis();
     return 1;
   }
