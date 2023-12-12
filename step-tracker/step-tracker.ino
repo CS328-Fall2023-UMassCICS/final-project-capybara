@@ -11,7 +11,7 @@
 #define PRINT_INTERVAL 500
 #define MAG_ARRAY_LEN 500
 #define RST_BUTTON 9
-#define DEBUG 0
+#define DEBUG 1
 
 typedef struct {
   unsigned int arr[MAG_ARRAY_LEN] = {0};

@@ -1,9 +1,11 @@
 # Arduino Step Tracker, Final Project CS328
 
+## LINK TO SLIDES [here](https://docs.google.com/presentation/d/1ColqYFM0euTa88CQ5PFyD8eiSrRo1e8qehB2PgmDlpc)
+
 ## Problem Statement
 
-- Although we have learned to do step detection with pre-recorded data and potentially using phone data, we decided to do a little challange.
-- We wanted to see if it's possiable to do real-time data processing on a small arduino microcontroller to make a step tracker.
+- Although we have learned to do step detection with pre-recorded data and potentially using phone data, we decided to do a little challenge.
+- We wanted to see if it's possible to do real-time data processing on a small arduino microcontroller to make a step tracker.
 
 ## Potential application of the project
 
@@ -21,6 +23,10 @@
 
 - We used an accelerometer similar to a phone to detect leg movements as well as forward acceleration.
 - Using a moving average array to do smoothing. A z-score peak detection will allow for peak detection based on previous values instead of hard coding.
+- Here is a plot of the magnitude data we collected and the resulting z-score
+![plot](plot.png)
+- Based on the z-score plot, we can see that when the is a z-score above 2-2.5 or so, there is a step taken.
+- Using the z-score method can accommodate for different intensity of acceleration, instead of hard-coding a magnitude threshold.
 
 ## Result
 
@@ -34,7 +40,7 @@
 
 ## Future improvements
 
-- Dynamically adjust z-score threashold for variation in steps.
+- Dynamically adjust z-score threshold for variation in steps.
 - Improve the smoothing and filtering algorithm to better process accelerometer data.
 - Improve runtime complexity and space complexity.
 
